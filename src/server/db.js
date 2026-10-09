@@ -6,6 +6,7 @@ db.pragma('foreign_keys =ON')
 db.exec(`
     CREATE TABLE IF NOT EXISTS albums ( 
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    cover_url TEXT
     title TEXT NOT NULL,
     artist TEXT NOT NULL,
     genre TEXT,
