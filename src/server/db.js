@@ -20,7 +20,7 @@ db.exec(`
     name TEXT NOT NULL,
     description TEXT,
     created_date TEXT NOT NULL,
-    mood_score INTEGER CHECK(mood_score BETWEEN 1 AND 10)
+    mood_score REAL CHECK(mood_score BETWEEN 1 AND 10)
     );
 `);
 
@@ -29,8 +29,10 @@ db.exec(`
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     album_id INTEGER NOT NULL,
     date TEXT NOT NULL,
-    rating INTEGER CHECK(rating BETWEEN 1 AND 5),
+    rating REAL CHECK(rating BETWEEN 1 AND 5),
     note TEXT,
     FOREIGN KEY (album_id) REFERENCES albums(id)
     );
 `);
+
+module.exports =db;
