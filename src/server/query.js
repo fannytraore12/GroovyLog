@@ -1,10 +1,7 @@
 const db = require('./db');
 const stats = db.prepare(`
-  SELECT albums.title,
-         COUNT(listens.id) AS listen_count,
-         AVG(listens.rating) AS avg_rating
-  FROM albums
-  LEFT JOIN listens ON listens.album_id = albums.id
-  GROUP BY albums.id ORDER BY listen_count DESC
+  SELECT strftime('%Y-%m', listens.date)  AS month, ROUND(AVG(listens.rating), 2) AS avg_rating FROM listens
+  GROUP BY month
+  ORDER BY month 
 `).all();
 console.log(stats);

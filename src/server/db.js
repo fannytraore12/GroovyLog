@@ -1,12 +1,13 @@
 //Import the better-sqlite3 library
+const path = require('path');
 const DataBase = require('better-sqlite3');
-const db = new DataBase('track-record.db');
-db.pragma('foreign_keys =ON')
+const db = new DataBase(path.join(__dirname,'groovylog.db'));
+db.pragma('foreign_keys = ON')
 
 db.exec(`
     CREATE TABLE IF NOT EXISTS albums ( 
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    cover_url TEXT
+    cover_url TEXT,
     title TEXT NOT NULL,
     artist TEXT NOT NULL,
     genre TEXT,
@@ -14,16 +15,6 @@ db.exec(`
     );
 `);
 
-
-db.exec(`
-    CREATE TABLE IF NOT EXISTS playlists ( 
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    description TEXT,
-    created_date TEXT NOT NULL,
-    mood_score REAL CHECK(mood_score BETWEEN 1 AND 10)
-    );
-`);
 
 db.exec(`
     CREATE TABLE IF NOT EXISTS listens (

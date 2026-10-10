@@ -16,5 +16,8 @@ db.exec(`
         VALUES (3, '2026-10-08', 3.9, 'I havent finished listening to it, but so far it has been greeeaat!');
 
         INSERT INTO listens (album_id, date, rating, note)
-        VALUES (3, '2026-10-08', 5, 'I left my house at a pub in Hamstead!!!');
+        VALUES (3, '2026-11-08', 5, 'I left my house at a pub in Hamstead!!!');
+
+        INSERT INTO listens (album_id, date, rating, note)
+        VALUES (3, '2026-11-08', 4.66, 'Wake me up when this sh is over!!!');
 `);
