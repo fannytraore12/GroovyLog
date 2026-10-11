@@ -16,10 +16,10 @@ function LogListen(){
         let url = 'http://localhost:3000/albums';
         fetch(url).then(res=>res.json()).then(data=> {setAlbums(data);}).catch(() => { setError("Couldn't reach the server"); });}, []);
     return(
-    <div>
+    <div className="page">
         <h1>Log a listen</h1>
         {error && <p>{error}</p>}
-            <form onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
                 <label>Album</label>
                 <select value={albumId} onChange={(e)=> setId(e.target.value)}>
                     <option value ="">Pick an ALbum</option>

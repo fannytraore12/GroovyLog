@@ -13,7 +13,7 @@ function AddAlbum(){
     return(
         <div>
             <h1>Add a new Album</h1>
-            <form  onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleSubmit}>
                 <label>year</label>
                 <input type="number" value={year} onChange={(e)=> setYear(e.target.value)}></input>
                 <label>title</label>

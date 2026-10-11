@@ -1,0 +1,65 @@
+:root { 
+    --pink: #e65d94; 
+    --light-pink:#FFE3F1;
+    --white: #ffffff;
+    --blue: #A4d0ff;
+    --yellow: #ffd069;
+    --purple: #652f50;
+}
+h1, h2, h3,p,body{
+    font-family: "Pixelify Sans", serif;
+    color: var(--pink);
+}
+
+body{
+    background:var(--light-pink);
+    color: var(--purple);
+    margin: 0;
+}
+img{
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+}
+nav{
+    display:flex;
+    gap:16px;
+    background: var(--pink);
+    padding:12px;
+    border-bottom:4px solid var(--purple);
+}
+.nav a{
+    color: var(--white);
+    text-decoration: none;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr))
+}
+.card{
+    padding: 12px;
+}
+.card h2{
+     min-height: 2.4em;
+
+    font-size:18px;
+}
+input, select, textarea, button{
+    font-family: inherit;
+    color:#e65d94;
+    border: 3px solid var(--pink);
+    background: var(--white);
+    padding: 8px;
+    border-radius: 0;
+}
+button{
+    background: var(--pink);
+    color: var(--white);
+    box-shadow: 3px 3px 0 var(--purple);
+    cursor:pointer;
+}
+button:active { transform: translate(3px, 3px); box-shadow: none; }
+.form { display: flex; flex-direction: column; gap: 8px; max-width: 400px; }
+.page { padding: 16px; max-width:1400px; margin: 0 auto; }
+.star { width:35px; height:auto; gap: 4px;}
+.cover { width: 100%; height: auto; display: block; }

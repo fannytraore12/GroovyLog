@@ -18,7 +18,7 @@ function Collection() {
 
   }, [genre]);
   return(
-  <div>
+  <div className="page">    
     <p>Albums: {albums.length}</p>
     <select value={genre} onChange={(e) => setGenre(e.target.value)}>      
       <option value ="">All</option>
@@ -28,7 +28,9 @@ function Collection() {
     </select>
     {loading && <p>Loading...</p>}
     {error && <p>{error}</p>}
-    { !loading && !error && albums.map(album => <AlbumCard title ={album.title} artist={album.artist} key={album.id} cover={album.cover_url} rating={album.avg_rating} listens={album.listen_count}></AlbumCard>)}
+    <div className ="grid">
+      { !loading && !error && albums.map(album => <AlbumCard title ={album.title} artist={album.artist} key={album.id} cover={album.cover_url} rating={album.avg_rating} listens={album.listen_count}></AlbumCard>)}
+    </div>
   </div>
   )
 };
