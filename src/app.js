@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
-
+const cors = require('cors');
+app.use(cors());
 const db = require('./server/db.js');
 app.get('/', (req,res) => {
     res.json({status: "ok"});
