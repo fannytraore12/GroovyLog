@@ -17,8 +17,6 @@ body{
     margin: 0;
 }
 img{
-    width: 100%;
-    height: auto;
     image-rendering: pixelated;
 }
 nav{
@@ -34,7 +32,8 @@ nav{
 }
 .grid{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr))
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
 }
 .card{
     padding: 12px;
@@ -61,5 +60,6 @@ button{
 button:active { transform: translate(3px, 3px); box-shadow: none; }
 .form { display: flex; flex-direction: column; gap: 8px; max-width: 400px; }
 .page { padding: 16px; max-width:1400px; margin: 0 auto; }
-.star { width:35px; height:auto; gap: 4px;}
+.stars { display: flex; gap: 4px; }
+.star { width: 35px; height: autopx; flex-shrink: 0; }
 .cover { width: 100%; height: auto; display: block; }

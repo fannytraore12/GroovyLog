@@ -8,8 +8,10 @@ function AlbumCard(props){
         <div className ="card">
             <h2>{props.title}</h2>
             <p>{props.artist}</p>
-            <img src ={props.cover || placeholderImg} alt = {props.title}></img>
-            {[1,2,3,4,5].map(n => <img key={n} src={n <= filled ? starActive : starInactive} className="star" alt="" />)}
+            <img className = "cover" src ={props.cover || placeholderImg} alt = {props.title}></img>
+            <div  className="stars">
+                {[1,2,3,4,5].map(n => <img key={n} className="star" src={n <= filled ? starActive : starInactive}  alt="" />)}
+            </div>
             <p>Listens: {props.listens}<br></br>Rating: {props.rating || "No thoughts!"} </p>
         </div>
     )

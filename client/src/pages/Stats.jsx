@@ -1,6 +1,12 @@
 
 function Stats(){
-    return(<h1>Show stats</h1>)
+    return(
+        <div>
+            <h1>Show stats</h1>
+
+
+        </div>
+)
 
 }
 

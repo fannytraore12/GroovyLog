@@ -1,5 +1,6 @@
 const db = require('./db');
 db.exec(`
+        DELETE FROM sqlite_sequence WHERE name IN ('listens', 'albums');
         INSERT INTO albums (title, artist, genre, year)
         VALUES ('I''ll Like You', 'ILLIT', 'K-Pop', 2025);
 
