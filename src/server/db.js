@@ -1,7 +1,9 @@
 //Import the better-sqlite3 library
 const path = require('path');
 const DataBase = require('better-sqlite3');
-const db = new DataBase(path.join(__dirname,'groovylog.db'));
+const dbFile = process.env.NODE_ENV === 'test'? ':memory:':path.join(__dirname,'groovylog.db');
+const db = new DataBase(dbFile);
+
 db.pragma('foreign_keys = ON')
 
 db.exec(`
